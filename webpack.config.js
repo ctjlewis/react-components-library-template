@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const glob = require('glob');
 
-const AddStylesToDocumentPlugin = require('/home/christian/PersonalProjects/webpack-add-styles-to-document');
+const AddStylesToDocumentPlugin = require('webpack-add-styles-to-document');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 // const ClosurePlugin = require('closure-webpack-plugin');

@@ -10,9 +10,9 @@
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "A template repository for developing a React component library.",
-  "author": "Christian Lewis <christian@ctj.lewis@icloud.com>",
+  "author": "C. Lewis",
   "license": "MIT",
   "private": false,
   "scripts": {

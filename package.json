@@ -37,7 +37,7 @@
     "mocha": "^8.3.2",
     "postcss": "^8.2.13",
     "postcss-loader": "^5.2.0",
-    "react-components-library-template": "^0.1.1",
+    "react-components-library-template": "^0.1.2",
     "sass": "^1.32.12",
     "sass-loader": "^11.0.1",
     "tailwindcss": "^2.1.2",

@@ -130,7 +130,7 @@ tsExports += namedExports
 tsExports += defaultNamedExport
 
 esmExports += namedExports
-esmExports += namedExports
+esmExports += defaultNamedExport
 
 if (!fs.existsSync('dist')) fs.mkdirSync('dist');
 fs.writeFileSync('dist/index.ts', tsExports);

@@ -4491,10 +4491,10 @@ raw-body@2.4.1:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
-react-components-library-template@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/react-components-library-template/-/react-components-library-template-0.1.2.tgz#529d7d03dc71849a68f4e2e6f7345bbc621128d7"
-  integrity sha512-6PaylAc+n0NFeemqAA+Q+sx1Ogwxl/JKNORu0tTCi1QzfTjnFehEHblyD6KGdXvY4eIIAENg/mKiMFM8GGJ2Xg==
+react-components-library-template@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/react-components-library-template/-/react-components-library-template-0.2.0.tgz#1e44dd8dba23fd0d80fbabf2e2f4582b4920bf1d"
+  integrity sha512-qCzHpWCp5Op0X7lMG9sQ7pi84qoZrAy1Z+AQDNCXibNvaxfi29bjKo8A9tOB/XpyOlTpWmwlS/KCAEbcrtfvyg==
   dependencies:
     react "^17.0.2"
     react-dom "^17.0.2"

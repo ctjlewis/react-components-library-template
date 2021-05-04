@@ -31,30 +31,30 @@ exported. The module should "just work" with ESM and CJS, default and named.
 /** ESM */
 
 // named
-import { TestButton, TestHeading } from "react-component-library";
+import { TestButton, TestHeading } from "react-components-library-template";
 
 // named (as default)
 // ComponentLibrary.TestButton, ComponentLibrary.TestHeading
-import ComponentLibrary from "react-component-library";
+import ComponentLibrary from "react-components-library-template";
 
 // submodule defaults
-import TestButton from "react-component-library/TestButton";
-import TestHeading from "react-component-library/TestHeading";
+import TestButton from "react-components-library-template/TestButton";
+import TestHeading from "react-components-library-template/TestHeading";
 ```
 
 ```js
 /** CJS */
 
 // named
-const { TestButton, TestHeading } = require("react-component-library");
+const { TestButton, TestHeading } = require("react-components-library-template");
 
 // named (as default)
 // ComponentLibrary. TestButton, ComponentLibrary.TestHeading
-const ComponentLibrary = require("react-component-library");
+const ComponentLibrary = require("react-components-library-template");
 
 // submodule defaults
-const TestButton = require("react-component-library/TestButton");
-const TestHeading = require("react-component-library/TestHeading");
+const TestButton = require("react-components-library-template/TestButton");
+const TestHeading = require("react-components-library-template/TestHeading");
 ```
 
 ### Compiling

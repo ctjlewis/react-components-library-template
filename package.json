@@ -1,11 +1,11 @@
 {
-  "name": "react-component-library",
+  "name": "react-components-library-template",
   "types": "dist/index.d.ts",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "version": "0.0.1",
   "description": "A template repository for developing a React component library.",
-  "author": "Christian Lewis <christian@trytelework.com>",
+  "author": "Christian Lewis <christian@ctj.lewis@icloud.com>",
   "license": "MIT",
   "private": false,
   "scripts": {

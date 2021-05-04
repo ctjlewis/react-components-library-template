@@ -4,11 +4,10 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with
 # React Component Library
 
 A template repository for developing a library of React components in real-time
-using Next, then compiling and distributing them via NPM or another CDN.
+using Next, then compiling and distributing them via NPM or another CDN. Automatically loads CSS module styles into DOM at runtime and handles
+minification. **Leaves `react` and `react-dom` as external**. 
 
-Automatically loads CSS module styles into DOM at runtime and handles
-minification. **Leaves `react` and `react-dom` as external**. Just zip it and
-ship it with `yarn components` and `yarn publish`.
+Just zip it and ship it with `yarn components` and `yarn publish`.
 
 ## Getting Started
 

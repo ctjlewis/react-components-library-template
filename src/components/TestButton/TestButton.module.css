@@ -1,0 +1,7 @@
+.button {
+  width: 128px;
+  padding: 8px;
+  border-radius: 8px;
+  background: aliceblue;
+  border: 2px solid darkslategrey;
+}

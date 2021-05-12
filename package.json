@@ -16,7 +16,8 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "components": "NODE_ENV=production yarn webpack --mode=production && yarn tsc --project tsconfig-declarations.json",
+    "clean": "rm -rf dist/**",
+    "components": "yarn clean && NODE_ENV=production yarn webpack --mode=production && yarn tsc --project tsconfig-declarations.json",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

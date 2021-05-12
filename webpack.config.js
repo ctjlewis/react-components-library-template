@@ -9,7 +9,7 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const entryMap = {}
-const componentEntries = glob.sync('src/components/*/');
+const componentEntries = glob.sync('src/components/*');
 
 for (const entry of componentEntries) {
   const componentName = path.basename(entry);
@@ -109,7 +109,10 @@ module.exports = {
   devtool: 'source-map',
 }
 
-const componentNames = componentEntries.map((entry) => path.basename(entry));
+const componentNames = componentEntries.map(
+  (entry) => path.basename(entry).replace(/\.((js|ts)x?)/i, '')
+);
+console.log({ componentNames })
 let tsExports = '';
 let esmExports = '';
 let cjsExports = '';

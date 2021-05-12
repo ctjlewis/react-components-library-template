@@ -12,7 +12,7 @@ const entryMap = {}
 const componentEntries = glob.sync('src/components/*');
 
 for (const entry of componentEntries) {
-  const componentName = path.basename(entry);
+  const componentName = path.basename(entry).replace(/\.((js|ts)x?)/i, '');
   entryMap[componentName] = path.resolve(entry);
 }
 
@@ -112,7 +112,7 @@ module.exports = {
 const componentNames = componentEntries.map(
   (entry) => path.basename(entry).replace(/\.((js|ts)x?)/i, '')
 );
-console.log({ componentNames })
+
 let tsExports = '';
 let esmExports = '';
 let cjsExports = '';

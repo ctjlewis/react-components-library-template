@@ -1,5 +1,6 @@
+import singleFileExport from './singleFileExport'
 import TestButton from './TestButton'
 import TestHeading from './TestHeading'
 
-export { TestButton, TestHeading }
-export default { TestButton, TestHeading }
+export { singleFileExport, TestButton, TestHeading }
+export default { singleFileExport, TestButton, TestHeading }

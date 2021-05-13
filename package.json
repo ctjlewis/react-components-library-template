@@ -4,8 +4,14 @@
     "dist/**/*"
   ],
   "exports": {
-    ".": "./dist/index.js",
-    "./*": "./dist/*/index.js"
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    },
+    "./*": {
+      "require": "./dist/*/index.js",
+      "import": "./dist/*/index.mjs"
+    }
   },
   "types": "dist/index.d.ts",
   "main": "dist/index.js",

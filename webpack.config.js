@@ -9,7 +9,15 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const entryMap = {}
-const componentEntries = glob.sync('src/components/*');
+const componentEntries = glob.sync(
+  'src/components/*',
+  {
+    ignore: [
+      'src/components/types.ts',
+      'src/components/types.tsx',
+    ]
+  }
+);
 
 for (const entry of componentEntries) {
   const componentName = path.basename(entry).replace(/\.((js|ts)x?)/i, '');
@@ -47,7 +55,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.ts(x?)$/,
         use: [
           /**
            * Override the tsconfig file.
@@ -109,33 +117,49 @@ module.exports = {
   devtool: 'source-map',
 }
 
-const componentNames = componentEntries.map(
+const componentNames = componentEntries.filter(
+  (entry) => !(/types.ts(x?)/i.test(entry))
+).map(
   (entry) => path.basename(entry).replace(/\.((js|ts)x?)/i, '')
 );
 
-let tsExports = '';
-let esmExports = '';
-let cjsExports = '';
+let tsFile = '';
+let esmFile = '';
+let cjsFile = '';
 
 for (const name of componentNames) {
-  cjsExports += `exports.${name} = require('./${name}/index.js')\n`;
-  tsExports += `import ${name} from './${name}'\n`;
-  esmExports += `import ${name} from './${name}/index.js'\n`;
+  cjsFile += `exports.${name} = require('./${name}/index.js')\n`;
+  tsFile += `import ${name} from './${name}'\n`;
+  esmFile += `import ${name} from './${name}/index.js'\n`;
 }
 
 const namedExports = `export { ${componentNames.join(', ')} }\n`;
 const defaultNamedExport = `export default { ${componentNames.join(', ')} }\n`;
 
-tsExports += '\n'
-esmExports += '\n'
+tsFile += '\n'
+esmFile += '\n'
 
-tsExports += namedExports
-tsExports += defaultNamedExport
+tsFile += namedExports
+tsFile += defaultNamedExport
 
-esmExports += namedExports
-esmExports += defaultNamedExport
+/**
+ * If type declarations exist from types.ts, export them in index.ts so they're
+ * available at index.d.ts.
+ */
+if (
+  glob.sync('src/components/types.*').some(
+    (file) => /types.ts(x?)/i.test(file)
+  )
+) {
+  tsFile += `export * from './types'`;
+}
 
-if (!fs.existsSync('dist')) fs.mkdirSync('dist');
-fs.writeFileSync('dist/index.ts', tsExports);
-fs.writeFileSync('dist/index.mjs', esmExports);
-fs.writeFileSync('dist/index.js', cjsExports);
+esmFile += namedExports
+esmFile += defaultNamedExport
+
+if (!fs.existsSync('dist')) {
+  fs.mkdirSync('dist');
+}
+fs.writeFileSync('dist/index.ts', tsFile);
+fs.writeFileSync('dist/index.mjs', esmFile);
+fs.writeFileSync('dist/index.js', cjsFile);

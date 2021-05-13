@@ -9,3 +9,4 @@ declare const _default: {
     TestHeading: () => JSX.Element;
 };
 export default _default;
+export * from './types';

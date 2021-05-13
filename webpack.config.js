@@ -151,7 +151,7 @@ if (
     (file) => /types.ts(x?)/i.test(file)
   )
 ) {
-  tsFile += `export * from './types'`;
+  tsFile += `\nexport * from './types'`;
 }
 
 esmFile += namedExports

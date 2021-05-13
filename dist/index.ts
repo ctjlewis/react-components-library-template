@@ -4,3 +4,5 @@ import TestHeading from './TestHeading'
 
 export { singleFileExport, TestButton, TestHeading }
 export default { singleFileExport, TestButton, TestHeading }
+
+export * from './types'
